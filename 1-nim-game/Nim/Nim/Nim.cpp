@@ -1,5 +1,4 @@
 // Nim.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
 #include <cstdlib>
@@ -12,12 +11,21 @@
 #include <cmath>
 
 using namespace std;
+int nimMaches = 24;
+const int draw1 = 1;
+const int draw2 = 2;
+const int draw3 = 3;
 
 int main(int argc, char** argv)
 {
     cout << "Test" << endl;
-    
+    bool playerWin = 0; // 1 = true : 0 = false;
+    cout << "Player have won " << playerWin << endl;
+    return 0;
 }
+
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
