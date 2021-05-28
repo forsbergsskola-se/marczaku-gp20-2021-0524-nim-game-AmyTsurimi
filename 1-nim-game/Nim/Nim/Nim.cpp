@@ -15,10 +15,31 @@ int nimMaches = 24;
 const int draw1 = 1;
 const int draw2 = 2;
 const int draw3 = 3;
-
+// Keep It Simple Stupid 
 int main(int argc, char** argv)
 {
-    cout << "Test" << endl;
+    cout << "Nim-Game" << endl;
+    cout << "Do you want to know the rules? [1]: Yes [0]: No" << endl;
+    int yesOrNo;
+    cin >> yesOrNo;
+    if (yesOrNo >= 1) {
+        cout << "You have " << nimMaches << " matches" << endl;
+        cout << "You can draw 1, 2 or 3 matches on your turn." << endl;
+        cout << "You want to be the person who draws the last match" << endl;
+    }
+    /* Work on later
+    cout << "Rolling for who starts" << endl;
+    int playerNum1 = rand() % 100;
+    int aiNum1 = rand() % 100;
+    switch (playerNum1, aiNum1)
+    {
+        case playerNum1 > aiNum1
+    }
+    */
+    cout << "How many matches do you want to draw? Currently there is " << nimMaches << endl;
+    int playerDrawNum;
+    cin >> playerDrawNum;
+
     bool playerWin = 0; // 1 = true : 0 = false;
     cout << "Player have won " << playerWin << endl;
     return 0;
