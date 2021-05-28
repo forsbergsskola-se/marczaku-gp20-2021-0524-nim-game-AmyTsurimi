@@ -11,7 +11,7 @@
 #include <cmath>
 
 using namespace std;
-int nimMaches = 24;
+int nimMatches = 24;
 const int draw1 = 1;
 const int draw2 = 2;
 const int draw3 = 3;
@@ -23,7 +23,7 @@ int main(int argc, char** argv)
     int yesOrNo;
     cin >> yesOrNo;
     if (yesOrNo >= 1) {
-        cout << "You have " << nimMaches << " matches" << endl;
+        cout << "You have " << nimMatches << " matches" << endl;
         cout << "You can draw 1, 2 or 3 matches on your turn." << endl;
         cout << "You want to be the person who draws the last match" << endl;
     }
@@ -36,13 +36,32 @@ int main(int argc, char** argv)
         case playerNum1 > aiNum1
     }
     */
-    cout << "How many matches do you want to draw? Currently there is " << nimMaches << endl;
-    int playerDrawNum;
-    cin >> playerDrawNum;
-
-    bool playerWin = 0; // 1 = true : 0 = false;
-    cout << "Player have won " << playerWin << endl;
-    return 0;
+    while (nimMatches > 0) {
+        cout << "How many matches do you want to draw? Currently there is " << nimMatches << endl;
+        int playerDrawNum;
+        cin >> playerDrawNum;
+        while (playerDrawNum > 3 || playerDrawNum <= 0) {
+            cout << "Not a valid draw number. Please choose 1, 2 or 3" << endl;
+            cout << "How many matches do you want to draw? Currently there is " << nimMatches << endl;
+            cin >> playerDrawNum;
+        }
+        nimMatches = nimMatches - playerDrawNum;
+        cout << "You took " << playerDrawNum << " of the matches." << endl;
+        cout << "There is " << nimMatches << " matches left." << endl;
+        if (nimMatches <= 0) {
+            cout << "Player have won" << endl;
+            break;
+        }
+        int aiDraw = rand() % 3; //Idk if I should bother making it more advanced later.
+        nimMatches = nimMatches - aiDraw;
+        cout << "AI took " << aiDraw << " of the matches." << endl;
+        cout << "There is " << nimMatches << " matches left." << endl;
+        if (nimMatches <= 0) {
+            cout << "AI have won" << endl;
+            break;
+        }
+    }
+    //Make so you can play more than once
 }
 
 
