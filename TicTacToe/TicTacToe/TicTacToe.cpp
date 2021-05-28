@@ -38,7 +38,7 @@ int main()
 		int playerGridNum;
 		cin >> playerGridNum;
 		playerGridNum = playerGridNum - 1;
-		while (arrayIntSlot[playerGridNum] < 1) {
+		while (arrayIntSlot[playerGridNum] >= 1) {
 			cout << "You can't place a token ontop of another token. Please choose another number." << endl;
 			cin >> playerGridNum;
 			playerGridNum = playerGridNum - 1;
@@ -53,7 +53,7 @@ int main()
 		cout << "AI's trun" << endl;
 		int aiGridNum = rand() % 9;
 		aiGridNum = aiGridNum - 1;
-		while (arrayIntSlot[aiGridNum] > 1) {
+		while (arrayIntSlot[aiGridNum] >= 1) {
 			int aiGridNum = rand() % 9;
 			aiGridNum = aiGridNum - 1;
 		}
