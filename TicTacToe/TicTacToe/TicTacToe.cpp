@@ -15,7 +15,7 @@ int main()
 	int arrayIntSlot[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	string arraySlot[9] = { " ", " ", " ", " " , " " , " " , " " , " " , " " };
 	bool gameIsOn = true;
-
+	int i = 0;
 	cout << "Tic Tac Toe" << endl;
 	while (gameIsOn)
 	{
@@ -38,6 +38,11 @@ int main()
 		int playerGridNum;
 		cin >> playerGridNum;
 		playerGridNum = playerGridNum - 1;
+		while (arrayIntSlot[playerGridNum] < 1) {
+			cout << "You can't place a token ontop of another token. Please choose another number." << endl;
+			cin >> playerGridNum;
+			playerGridNum = playerGridNum - 1;
+		}
 		arrayIntSlot[playerGridNum] = 1;
 		arraySlot[playerGridNum] = playerToken;
 		playerGridNum = playerGridNum + 1;
@@ -48,7 +53,11 @@ int main()
 		cout << "AI's trun" << endl;
 		int aiGridNum = rand() % 9;
 		aiGridNum = aiGridNum - 1;
-		arrayIntSlot[aiGridNum] = 2;
+		while (arrayIntSlot[aiGridNum] > 1) {
+			int aiGridNum = rand() % 9;
+			aiGridNum = aiGridNum - 1;
+		}
+		arrayIntSlot[aiGridNum] = 4;
 		arraySlot[aiGridNum] = AItoken;
 		aiGridNum = aiGridNum + 1;
 		cout << "AI place its Token on " << aiGridNum << endl;
@@ -78,7 +87,7 @@ int main()
 		
 		cout << "Win Number " << PlayerwinNumber[0] << endl;
 		*/
-		int i = 0;
+		
 		for (int i = 0; i <7; i++) {
 			if (PlayerwinNumber[i] == 3) {
 				cout << "Player Wins!" << endl;
@@ -89,7 +98,7 @@ int main()
 				gameIsOn = false;
 				break;
 			}
-			if (PlayerwinNumber[i] == 6) {
+			if (PlayerwinNumber[i] == 12) {
 				cout << "AI Wins!" << endl;
 				cout << "[" << arraySlot[0] << "]" << "[" << arraySlot[1] << "]" << "[" << arraySlot[2] << "]" << endl;
 				cout << "[" << arraySlot[3] << "]" << "[" << arraySlot[4] << "]" << "[" << arraySlot[5] << "]" << endl;
