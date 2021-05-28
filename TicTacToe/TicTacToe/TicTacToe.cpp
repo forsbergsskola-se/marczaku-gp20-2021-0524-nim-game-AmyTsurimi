@@ -40,12 +40,17 @@ int main()
 		playerGridNum = playerGridNum - 1;
 		arrayIntSlot[playerGridNum] = 1;
 		arraySlot[playerGridNum] = playerToken;
+		playerGridNum = playerGridNum + 1;
+		cout << "Player place its Token on " << playerGridNum << endl;
+
+		cout << endl;
 
 		cout << "AI's trun" << endl;
 		int aiGridNum = rand() % 9;
 		aiGridNum = aiGridNum - 1;
 		arrayIntSlot[aiGridNum] = 2;
 		arraySlot[aiGridNum] = AItoken;
+		aiGridNum = aiGridNum + 1;
 		cout << "AI place its Token on " << aiGridNum << endl;
 
 		int PlayerwinNumber[8];
@@ -56,15 +61,41 @@ int main()
 		PlayerwinNumber[3] = arrayIntSlot[0] + arrayIntSlot[3] + arrayIntSlot[6];
 		PlayerwinNumber[4] = arrayIntSlot[1] + arrayIntSlot[4] + arrayIntSlot[7];
 		PlayerwinNumber[5] = arrayIntSlot[2] + arrayIntSlot[5] + arrayIntSlot[8];
+
+		AIwinNumber[0] = arrayIntSlot[0] + arrayIntSlot[1] + arrayIntSlot[2];
+		AIwinNumber[1] = arrayIntSlot[3] + arrayIntSlot[4] + arrayIntSlot[5];
+		AIwinNumber[2] = arrayIntSlot[6] + arrayIntSlot[7] + arrayIntSlot[8];
+		AIwinNumber[3] = arrayIntSlot[0] + arrayIntSlot[3] + arrayIntSlot[6];
+		AIwinNumber[4] = arrayIntSlot[1] + arrayIntSlot[4] + arrayIntSlot[7];
+		AIwinNumber[5] = arrayIntSlot[2] + arrayIntSlot[5] + arrayIntSlot[8];
+
+		/*
 		PlayerwinNumber[6] = arrayIntSlot[0] + arrayIntSlot[4] + arrayIntSlot[8];
 		PlayerwinNumber[7] = arrayIntSlot[2] + arrayIntSlot[4] + arrayIntSlot[6];
-		/*
+
+		AIwinNumber[6] = arrayIntSlot[0] + arrayIntSlot[4] + arrayIntSlot[8];
+		AIwinNumber[7] = arrayIntSlot[2] + arrayIntSlot[4] + arrayIntSlot[6];
+		
 		cout << "Win Number " << PlayerwinNumber[0] << endl;
 		*/
 		int i = 0;
 		for (int i = 0; i <7; i++) {
 			if (PlayerwinNumber[i] == 3) {
 				cout << "Player Wins!" << endl;
+				cout << "[" << arraySlot[0] << "]" << "[" << arraySlot[1] << "]" << "[" << arraySlot[2] << "]" << endl;
+				cout << "[" << arraySlot[3] << "]" << "[" << arraySlot[4] << "]" << "[" << arraySlot[5] << "]" << endl;
+				cout << "[" << arraySlot[6] << "]" << "[" << arraySlot[7] << "]" << "[" << arraySlot[8] << "]" << endl;
+				cout << endl;
+				gameIsOn = false;
+				break;
+			}
+			if (PlayerwinNumber[i] == 6) {
+				cout << "AI Wins!" << endl;
+				cout << "[" << arraySlot[0] << "]" << "[" << arraySlot[1] << "]" << "[" << arraySlot[2] << "]" << endl;
+				cout << "[" << arraySlot[3] << "]" << "[" << arraySlot[4] << "]" << "[" << arraySlot[5] << "]" << endl;
+				cout << "[" << arraySlot[6] << "]" << "[" << arraySlot[7] << "]" << "[" << arraySlot[8] << "]" << endl;
+				cout << endl;
+				gameIsOn = false;
 				break;
 			}
 		}
