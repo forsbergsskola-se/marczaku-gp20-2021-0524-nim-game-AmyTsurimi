@@ -27,15 +27,19 @@ int main(int argc, char** argv)
         cout << "You can draw 1, 2 or 3 matches on your turn." << endl;
         cout << "You want to be the person who draws the last match" << endl;
     }
-    /* Work on later
     cout << "Rolling for who starts" << endl;
     int playerNum1 = rand() % 100;
     int aiNum1 = rand() % 100;
-    switch (playerNum1, aiNum1)
-    {
-        case playerNum1 > aiNum1
+    if (playerNum1 >= aiNum1) {
+        cout << "Player starts" << endl;
     }
-    */
+    else {
+        cout << "AI starts" << endl;
+        int aiDraw = rand() % 3;
+        nimMatches = nimMatches - aiDraw;
+        cout << "AI took " << aiDraw << " of the matches." << endl;
+        cout << "There is " << nimMatches << " matches left." << endl;
+    }
     while (nimMatches > 0) {
         cout << "How many matches do you want to draw? Currently there is " << nimMatches << endl;
         int playerDrawNum;
