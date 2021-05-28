@@ -37,26 +37,39 @@ int main()
 		cout << "Its your Turn in what grid number do you want to place your token?" << endl;
 		int playerGridNum;
 		cin >> playerGridNum;
-		arrayIntSlot[playerGridNum] = 1;
 		playerGridNum = playerGridNum - 1;
+		arrayIntSlot[playerGridNum] = 1;
 		arraySlot[playerGridNum] = playerToken;
 
 		cout << "AI's trun" << endl;
 		int aiGridNum = rand() % 9;
-		arrayIntSlot[aiGridNum] = 1;
 		aiGridNum = aiGridNum - 1;
+		arrayIntSlot[aiGridNum] = 2;
 		arraySlot[aiGridNum] = AItoken;
 		cout << "AI place its Token on " << aiGridNum << endl;
 
-		int PlayerwinNumber[7];
-		int AIwinNumber[7];
+		int PlayerwinNumber[8];
+		int AIwinNumber[8];
 		PlayerwinNumber[0] = arrayIntSlot[0] + arrayIntSlot[1] + arrayIntSlot[2];
-		cout << "Player Win Number " << PlayerwinNumber << endl;
-		if (PlayerwinNumber[0] == 3){
-			cout << "Player Wins!" << endl;
-			break;
+		PlayerwinNumber[1] = arrayIntSlot[3] + arrayIntSlot[4] + arrayIntSlot[5];
+		PlayerwinNumber[2] = arrayIntSlot[6] + arrayIntSlot[7] + arrayIntSlot[8];
+		PlayerwinNumber[3] = arrayIntSlot[0] + arrayIntSlot[3] + arrayIntSlot[6];
+		PlayerwinNumber[4] = arrayIntSlot[1] + arrayIntSlot[4] + arrayIntSlot[7];
+		PlayerwinNumber[5] = arrayIntSlot[2] + arrayIntSlot[5] + arrayIntSlot[8];
+		PlayerwinNumber[6] = arrayIntSlot[0] + arrayIntSlot[4] + arrayIntSlot[8];
+		PlayerwinNumber[7] = arrayIntSlot[2] + arrayIntSlot[4] + arrayIntSlot[6];
+		/*
+		cout << "Win Number " << PlayerwinNumber[0] << endl;
+		*/
+		int i = 0;
+		for (int i = 0; i <7; i++) {
+			if (PlayerwinNumber[i] == 3) {
+				cout << "Player Wins!" << endl;
+				break;
+			}
 		}
-		
+		i = 0;
+		cout << endl;
 	}
 }
 
