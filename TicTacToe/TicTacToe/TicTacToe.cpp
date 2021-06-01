@@ -7,6 +7,32 @@
 #include <cmath>
 
 using namespace std;
+/*
+void a();
+void b();
+
+
+int main(bool OnOff = true)
+{
+	a(true);
+
+}
+
+void a(bool OnOff) {
+	cout << "Print a" << endl;
+	if (OnOff = false) {
+		return;
+	}
+	else {
+		b();	
+	}
+}
+
+void b() {
+	cout << "Print b" << endl;
+	a(false);
+}
+*/
 
 int main()
 {
@@ -57,9 +83,9 @@ int main()
 		cout << "AI's trun" << endl;
 		int aiGridNum = rand() % 9;
 		aiGridNum = aiGridNum - 1;
+		int x = rand() % 9;
 		while (arrayIntSlot[aiGridNum] >= 1) {
-			int aiGridNum = rand() % 9;
-			aiGridNum = aiGridNum - 1;
+			new int; aiGridNum = rand() % 9;
 		}
 		arrayIntSlot[aiGridNum] = 4;
 		arraySlot[aiGridNum] = AItoken;
@@ -140,6 +166,7 @@ int main()
 		cout << endl;
 	}
 }
+
 
 /*
 	Player: X
