@@ -42,7 +42,38 @@ int main()
 	string arraySlot[9] = { " ", " ", " ", " " , " " , " " , " " , " " , " " };
 	bool gameIsOn = true;
 	int i = 0;
+	int start = 0;
 	cout << "Tic Tac Toe" << endl;
+	string playerToken = "X";
+	string AItoken = "O";
+
+	if (start == 0) {
+			cout << "Rolling for who starts" << endl;
+			int playerNum1 = rand() % 100;
+			int aiNum1 = rand() % 100;
+			if (playerNum1 >= aiNum1) {
+				cout << "Player starts" << endl;
+			}
+			else {
+				cout << "AI starts" << endl;
+				int aiGridNum = rand() % 9;
+				aiGridNum = aiGridNum - 1;
+				int x = rand() % 9;
+				while (arrayIntSlot[aiGridNum] >= 1) {
+					new int; aiGridNum = rand() % 9;
+				}
+				arrayIntSlot[aiGridNum] = 4;
+				arraySlot[aiGridNum] = AItoken;
+				aiGridNum = aiGridNum + 1;
+				cout << "AI place its Token on " << aiGridNum << endl;
+				cout << "[" << arraySlot[0] << "]" << "[" << arraySlot[1] << "]" << "[" << arraySlot[2] << "]" << endl;
+				cout << "[" << arraySlot[3] << "]" << "[" << arraySlot[4] << "]" << "[" << arraySlot[5] << "]" << endl;
+				cout << "[" << arraySlot[6] << "]" << "[" << arraySlot[7] << "]" << "[" << arraySlot[8] << "]" << endl;
+				cout << endl;
+			}
+		}
+		new int; start + 1;
+
 	while (gameIsOn)
 	{
 
@@ -57,9 +88,7 @@ int main()
 		cout << "[" << arraySlot[6] << "]" << "[" << arraySlot[7] << "]" << "[" << arraySlot[8] << "]" << endl;
 		cout << endl;
 
-		string playerToken = "X";
-		string AItoken = "O";
-
+		//------------------------------------------------------------------------------------------------------
 		cout << "Its your Turn in what grid number do you want to place your token?" << endl;
 		int playerGridNum;
 		cin >> playerGridNum;
@@ -78,8 +107,8 @@ int main()
 		cout << "[" << arraySlot[6] << "]" << "[" << arraySlot[7] << "]" << "[" << arraySlot[8] << "]" << endl;
 		cout << endl;
 
-		cout << endl;
-
+		//cout << endl;
+		//------------------------------------------------------------------------------------------------------
 		cout << "AI's trun" << endl;
 		int aiGridNum = rand() % 9;
 		aiGridNum = aiGridNum - 1;
