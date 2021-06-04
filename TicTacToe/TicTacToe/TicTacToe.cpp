@@ -42,7 +42,7 @@ int main()
 	string arraySlot[9] = { " ", " ", " ", " " , " " , " " , " " , " " , " " };
 	bool gameIsOn = true;
 	int i = 0;
-	int start = 0;
+	bool start = true;
 	cout << "Tic Tac Toe" << endl;
 	string playerToken = "[X]";
 	string AItoken = "[O]";
@@ -53,35 +53,19 @@ int main()
 		{0,0,0} };
 
 	//Grid V2
-	cout << "The Grid Number" << endl;
 	string gridNumber[3][3] = {
 		{ "[7]", "[8]", "[9]"},
 		{ "[4]", "[5]", "[6]"},
 		{ "[1]", "[2]", "[3]"} };
 
-	for (int g = 0; g < 3; g++) {
-		for (int r = 0; r < 3; r++) {
-			cout << gridNumber[g][r];
-		}
-		cout << endl;
-	}
-	cout << endl;
-	cout << "Current Grid Bord" << endl;
 	string arrayDoubleSlot[3][3] = { 
 		{ "[ ]", "[ ]", "[ ]"}, 
 		{ "[ ]", "[ ]", "[ ]"}, 
 		{ "[ ]", "[ ]", "[ ]"} };
-		
-	for (int g = 0; g < 3; g++) {
-		for (int r = 0; r < 3; r++) {
-			cout << arrayDoubleSlot[g][r];
-		}
-		cout << endl;
-	}
 	
 	
 
-	if (start == 0) {
+	if (start == true) {
 			cout << "Rolling for who starts" << endl;
 			int playerNum1 = rand() % 100;
 			int aiNum1 = rand() % 100;
@@ -116,7 +100,7 @@ int main()
 				cout << endl;
 			}
 		}
-	new int; start + 1;
+	start = false; // Need to fix the First time roll.
 
 	while (gameIsOn)
 	{
@@ -150,38 +134,49 @@ int main()
 		cout << "Its your Turn in what grid number do you want to place your token?" << endl;
 		int playerGridNum;
 		cin >> playerGridNum;
+		int PlayerGrid;
+		int PlayerRow;
 
 		switch (playerGridNum)
 		{
 		case 1:
-			int PlayerGrid = 2;
-			int PlayerRow = 0;
+			new int; PlayerGrid = 2;
+			new int; PlayerRow = 0;
+			break;
 		case 2:
-			int PlayerGrid = 2;
-			int PlayerRow = 1;
+			new int; PlayerGrid = 2;
+			new int; PlayerRow = 1;
+			break;
 		case 3:
-			int PlayerGrid = 2;
-			int PlayerRow = 2;
+			new int; PlayerGrid = 2;
+			new int; PlayerRow = 2;
+			break;
 
 		case 4:
-			int PlayerGrid = 1;
-			int PlayerRow = 0;
+			new int; PlayerGrid = 1;
+			new int; PlayerRow = 0;
+			break;
 		case 5:
-			int PlayerGrid = 1;
-			int PlayerRow = 1;
+			new int; PlayerGrid = 1;
+			new int; PlayerRow = 1;
+			break;
 		case 6:
-			int PlayerGrid = 1;
-			int PlayerRow = 2;
+			new int; PlayerGrid = 1;
+			new int; PlayerRow = 2;
+			break;
 
 		case 7:
-			int PlayerGrid = 0;
-			int PlayerRow = 0;
+			new int; PlayerGrid = 0;
+			new int; PlayerRow = 0;
+			break;
 		case 8:
-			int PlayerGrid = 0;
-			int PlayerRow = 1;
+			new int; PlayerGrid = 0;
+			new int; PlayerRow = 1;
+			break;
 		case 9:
-			int PlayerGrid = 0;
-			int PlayerRow = 2;
+			new int; PlayerGrid = 0;
+			new int; PlayerRow = 2;
+			break;
 		}
 
 		while (arrayDoubleSlotInt[PlayerGrid][PlayerRow] >= 1) {
@@ -190,34 +185,34 @@ int main()
 			switch (playerGridNum)
 			{
 			case 1:
-				int PlayerGrid = 2;
-				int PlayerRow = 0;
+				new int; PlayerGrid = 2;
+				new int; PlayerRow = 0;
 			case 2:
-				int PlayerGrid = 2;
-				int PlayerRow = 1;
+				new int; PlayerGrid = 2;
+				new int; PlayerRow = 1;
 			case 3:
-				int PlayerGrid = 2;
-				int PlayerRow = 2;
+				new int; PlayerGrid = 2;
+				new int; PlayerRow = 2;
 
 			case 4:
-				int PlayerGrid = 1;
-				int PlayerRow = 0;
+				new int; PlayerGrid = 1;
+				new int; PlayerRow = 0;
 			case 5:
-				int PlayerGrid = 1;
-				int PlayerRow = 1;
+				new int; PlayerGrid = 1;
+				new int; PlayerRow = 1;
 			case 6:
-				int PlayerGrid = 1;
-				int PlayerRow = 2;
+				new int; PlayerGrid = 1;
+				new int; PlayerRow = 2;
 
 			case 7:
-				int PlayerGrid = 0;
-				int PlayerRow = 0;
+				new int; PlayerGrid = 0;
+				new int; PlayerRow = 0;
 			case 8:
-				int PlayerGrid = 0;
-				int PlayerRow = 1;
+				new int; PlayerGrid = 0;
+				new int; PlayerRow = 1;
 			case 9:
-				int PlayerGrid = 0;
-				int PlayerRow = 2;
+				new int; PlayerGrid = 0;
+				new int; PlayerRow = 2;
 			}
 		}
 		arrayDoubleSlotInt[PlayerGrid][PlayerRow] = 1;
