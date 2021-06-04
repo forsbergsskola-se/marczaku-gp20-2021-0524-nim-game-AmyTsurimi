@@ -44,8 +44,72 @@ int main()
 	int i = 0;
 	int start = 0;
 	cout << "Tic Tac Toe" << endl;
-	string playerToken = "X";
-	string AItoken = "O";
+	string playerToken = "[X]";
+	string AItoken = "[O]";
+	srand(time(0));
+	//int AIrow = rand() % 3;
+	//int AIgrid = rand() % 3;
+	int PlayerRow = rand() % 3;
+	int PlayerGrid = rand() % 3;
+	int arrayDoubleSlotInt[3][3] = {
+		{0,0,0},
+		{0,0,0},
+		{0,0,0} };
+
+	//Grid V2
+	
+	cout << "The Grid Number" << endl;
+	string gridNumber[3][3] = {
+		{ "[7]", "[8]", "[9]"},
+		{ "[4]", "[5]", "[6]"},
+		{ "[1]", "[2]", "[3]"} };
+
+	for (int g = 0; g < 3; g++) {
+		for (int r = 0; r < 3; r++) {
+			cout << gridNumber[g][r];
+		}
+		cout << endl;
+	}
+	cout << endl;
+	cout << "Current Grid Bord" << endl;
+	string arrayDoubleSlot[3][3] = { 
+		{ "[ ]", "[ ]", "[ ]"}, 
+		{ "[ ]", "[ ]", "[ ]"}, 
+		{ "[ ]", "[ ]", "[ ]"} };
+		
+	for (int g = 0; g < 3; g++) {
+		for (int r = 0; r < 3; r++) {
+			cout << arrayDoubleSlot[g][r];
+		}
+		cout << endl;
+	}
+	
+
+
+	//Double Array grid:
+	/* To do
+	Need new system that works with the new arrays. Would be best if not needed to make other arrays into Double too.
+	Tho might need to change depending on the turnout.
+	Best would if I don't need to change the arrayIntSlot.
+	
+	*/
+	
+	//AI Move
+	//---------------------------------------
+	cout << "AI starts" << endl;
+	int AIrow = rand() % 3;
+	int AIgrid = rand() % 3;
+	
+	while (arrayDoubleSlotInt[AIgrid][AIrow] >= 1) {
+		new int; AIrow = rand() % 3;
+		new int; AIgrid = rand() % 3;
+	}
+	
+	arrayDoubleSlotInt[AIgrid][AIrow] = 4;
+	arrayDoubleSlot[AIgrid][AIrow] = AItoken;
+	cout << "AI place its Token on " << gridNumber[AIgrid][AIrow] << endl;
+	cout << endl;
+	//---------------------------------------
 
 	if (start == 0) {
 			cout << "Rolling for who starts" << endl;
@@ -72,7 +136,7 @@ int main()
 				cout << endl;
 			}
 		}
-		new int; start + 1;
+	new int; start + 1;
 
 	while (gameIsOn)
 	{
