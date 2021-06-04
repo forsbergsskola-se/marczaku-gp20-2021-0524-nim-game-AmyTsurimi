@@ -7,32 +7,6 @@
 #include <cmath>
 
 using namespace std;
-/*
-void a();
-void b();
-
-
-int main(bool OnOff = true)
-{
-	a(true);
-
-}
-
-void a(bool OnOff) {
-	cout << "Print a" << endl;
-	if (OnOff = false) {
-		return;
-	}
-	else {
-		b();	
-	}
-}
-
-void b() {
-	cout << "Print b" << endl;
-	a(false);
-}
-*/
 
 int main()
 {
@@ -85,10 +59,6 @@ int main()
 				arrayDoubleSlotInt[AIgrid][AIrow] = 4;
 				arrayDoubleSlot[AIgrid][AIrow] = AItoken;
 				cout << "AI place its Token on " << gridNumber[AIgrid][AIrow] << endl;
-				string arrayDoubleSlot[3][3] = {
-					{ "[ ]", "[ ]", "[ ]"},
-					{ "[ ]", "[ ]", "[ ]"},
-					{ "[ ]", "[ ]", "[ ]"} };
 
 				for (int g = 0; g < 3; g++) {
 					for (int r = 0; r < 3; r++) {
@@ -118,10 +88,6 @@ int main()
 		}
 		cout << endl;
 		cout << "Current Grid Bord" << endl;
-		string arrayDoubleSlot[3][3] = {
-			{ "[ ]", "[ ]", "[ ]"},
-			{ "[ ]", "[ ]", "[ ]"},
-			{ "[ ]", "[ ]", "[ ]"} };
 
 		for (int g = 0; g < 3; g++) {
 			for (int r = 0; r < 3; r++) {
@@ -260,14 +226,6 @@ int main()
 		AIwinNumber[3] = arrayDoubleSlotInt[0][0] + arrayDoubleSlotInt[1][0] + arrayDoubleSlotInt[2][0];
 		AIwinNumber[4] = arrayDoubleSlotInt[0][1] + arrayDoubleSlotInt[1][1] + arrayDoubleSlotInt[2][1];
 		AIwinNumber[5] = arrayDoubleSlotInt[0][2] + arrayDoubleSlotInt[1][2] + arrayDoubleSlotInt[2][2];
-
-		/*
-		PlayerwinNumberD1 = arrayDoubleSlotInt[0][0] + arrayDoubleSlotInt[1][1] + arrayDoubleSlotInt[2][2];
-		PlayerwinNumberD2 = arrayDoubleSlotInt[0][2] + arrayDoubleSlotInt[1][1] + arrayDoubleSlotInt[2][0];
-
-		AIwinNumberD1 = arrayDoubleSlotInt[0][0] + arrayDoubleSlotInt[1][1] + arrayDoubleSlotInt[2][2];
-		AIwinNumberD2 = arrayDoubleSlotInt[0][2] + arrayDoubleSlotInt[1][1] + arrayDoubleSlotInt[2][0];
-		*/
 		
 		for (int i = 0; i <7; i++) {
 			
@@ -313,82 +271,3 @@ int main()
 		cout << endl;
 	}
 }
-
-
-/*
-	Player: X
-	AI:		O
-	Roll of who start
-	RNG AI
-
-	Grid:
-	[ ][ ][ ]
-	[ ][ ][ ]
-	[ ][ ][ ]
-	cout << "[" << Empty << "]" << "[" << Empty << "]" << "[" << Empty << "]" << endl;
-	cout << "[" << Empty << "]" << "[" << Empty << "]" << "[" << Empty << "]" << endl;
-	cout << "[" << Empty << "]" << "[" << Empty << "]" << "[" << Empty << "]" << endl;
-	*/
-
-	/*
-			switch (PlayerwinNumber[7])
-			{
-			case 1:
-				PlayerwinNumber[0] = arrayIntSlot[0] + arrayIntSlot[1] + arrayIntSlot[2];
-				if (PlayerwinNumber[0] == 3)
-					cout << "Player Wins!" << endl;
-					break;
-
-			case 2:
-				PlayerwinNumber[1] = arrayIntSlot[3] + arrayIntSlot[4] + arrayIntSlot[5];
-				if (PlayerwinNumber[1] == 3)
-					cout << "Player Wins!" << endl;
-					break;
-
-			case 3:
-				PlayerwinNumber[2] = arrayIntSlot[6] + arrayIntSlot[7] + arrayIntSlot[8];
-				if (PlayerwinNumber[2] == 3)
-					cout << "Player Wins!" << endl;
-					break;
-			case 4:
-				PlayerwinNumber[3] = arrayIntSlot[0] + arrayIntSlot[3] + arrayIntSlot[6];
-				if (PlayerwinNumber[3] == 3)
-					cout << "Player Wins!" << endl;
-					break;
-
-			case 5:
-				PlayerwinNumber[4] = arrayIntSlot[1] + arrayIntSlot[4] + arrayIntSlot[7];
-				if (PlayerwinNumber[4] == 3)
-					cout << "Player Wins!" << endl;
-					break;
-
-			case 6:
-				PlayerwinNumber[5] = arrayIntSlot[2] + arrayIntSlot[5] + arrayIntSlot[8];
-				if (PlayerwinNumber[5] == 3)
-					cout << "Player Wins!" << endl;
-					break;
-			case 7:
-				PlayerwinNumber[6] = arrayIntSlot[0] + arrayIntSlot[4] + arrayIntSlot[8];
-				if (PlayerwinNumber[6] == 3)
-					cout << "Player Wins!" << endl;
-					break;
-
-			case 8:
-				PlayerwinNumber[7] = arrayIntSlot[2] + arrayIntSlot[4] + arrayIntSlot[6];
-				if (PlayerwinNumber[7] == 3)
-					cout << "Player Wins!" << endl;
-					break;
-
-			}
-			*/
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
